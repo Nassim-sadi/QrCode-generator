@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+
+:root{
+    font-family: 'DynaPuff', cursive;
+    @apply m-0 p-0 bg-gradient-to-br from-green-100 via-white to-blue-100 antialiased
+}
+
+/* input{
+    @apply  rounded-xl border border-b-green-300 focus-within:border-b-green-600 
+} */
+input{
+    @apply  rounded-xl border border-green-200 bg-gray-100 px-4 outline-none drop-shadow-sm transition-all duration-500 ease-in-out focus:bg-white focus:outline-none focus:shadow-md focus:shadow-green-300
+}
+select{
+    @apply  rounded-xl p-2
+}
+#bmc-parent{
+    @apply bg-yellow-400 rounded-lg p-2 hover:bg-yellow-200 !important 
+}
+ 
+ul{
+    @apply  list-none items-center !important
+} 
+
+svg{
+    @apply h-8 !important
+}
+a{
+    @apply no-underline flex items-center w-fit my-2 md:mx-2 md:my-0 !important
+}
+a:hover{
+    @apply transform transition hover:scale-105 duration-500 ease-in-out  
+}
+h1{
+    @apply m-0 p-0 text-xl !important
+}
+nav{
+    @apply bg-transparent mt-1 md:mt-4 !important
+}
+
+/**
+ * ==============================================
+ * Dot Carousel
+ * ==============================================
+ */
+ .dot-carousel {
+    position: relative;
+    left: -9999px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9880ff;
+    color: #9880ff;
+    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;
+    animation: dotCarousel 1.5s infinite linear;
+  }
+  
+  @keyframes dotCarousel {
+    0% {
+      box-shadow: 9984px 0 0 -1px #9880ff, 9999px 0 0 1px #9880ff, 10014px 0 0 -1px #9880ff;
+    }
+    50% {
+      box-shadow: 10014px 0 0 -1px #9880ff, 9984px 0 0 -1px #9880ff, 9999px 0 0 1px #9880ff;
+    }
+    100% {
+      box-shadow: 9999px 0 0 1px #9880ff, 10014px 0 0 -1px #9880ff, 9984px 0 0 -1px #9880ff;
+    }
+  }  
