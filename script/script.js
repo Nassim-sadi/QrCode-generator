@@ -2,9 +2,11 @@ const genBtn = document.querySelector('#genBtn');
 const output = document.querySelector('#output');
 const spin = document.querySelector('#spin');
 const downloadBtn = document.querySelector('#downloadBtn');
+
 //function that generates Qr code on click
 
 genBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   clearUI();
   //Get everything we need
   const input = document.querySelector('#input').value;
