@@ -39,7 +39,7 @@ const createSaveBtn = (saveUrl) => {
   const link = document.createElement('a');
   link.id = 'save-link';
   link.classList =
-    'bg-teal-100 hover:bg-white text-teal-800 rounded-full py-3 px-8 shadow-md hover:shadow-2xl transition duration-500';
+    'bg-green-100 hover:bg-white text-green-800 rounded-full py-3 px-8 shadow-md hover:shadow-2xl transition duration-500';
   link.href = saveUrl;
   link.download = 'qrcode';
   link.innerHTML = 'Save Image';
