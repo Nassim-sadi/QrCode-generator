@@ -18,7 +18,7 @@
     ></script>
   </head>
   <body>
-    <div class="container max-w-screen-lg antialiased mx-auto min-h-screen">
+    <div class="container max-w-screen-lg antialiased mx-auto min-h-screen flex flex-col">
       <header>
         <nav class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg">
           <svg
@@ -119,14 +119,14 @@
         <select name="size" id="qrSize" class="block my-2">
           <option value="100">100x100</option>
           <option value="200">200x200</option>
-          <option value="300">300x300</option>
+          <option value="300" selected>300x300</option>
           <option value="400">400x400</option>
-          <option value="500" selected>500x500</option>
-          <option value="600">600x600</option>
+          <option value="500">500x500</option>
+          <!-- <option value="600">600x600</option>
           <option value="700">700x700</option>
           <option value="800">800x800</option>
           <option value="900">900x900</option>
-          <option value="1000">1000x1000</option>
+          <option value="1000">1000x1000</option> -->
         </select>
         <button
           type="submit"
@@ -139,14 +139,14 @@
         <div class="m-6">
           <div id="spin" class="dot-carousel hidden"></div>
         </div>
-        <div id="output"></div>
+        <div id="output" class="overflow-scroll"></div>
         <div id="dwn"></div>
       </main>
     </div>
-    <footer>
-      <div class="flex justify-center border-t-2 items-center">
+    <footer class="relative mt-auto">
+      <div class="flex justify-center border-t-2 items-center prose w-full mx-auto">
         <span class="text-gray-700"
-          >Copyright to Nassim Sadi &copy;
+          >Nassim Sadi &copy;
           <script>
             document.write(/\d{4}/.exec(Date())[0]);
           </script>

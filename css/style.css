@@ -1223,6 +1223,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.mt-auto {
+  margin-top: auto;
+}
+
 .block {
   display: block;
 }
@@ -1277,6 +1281,10 @@ video {
   list-style-type: none;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -1291,6 +1299,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.overflow-scroll {
+  overflow: scroll;
 }
 
 .rounded-xl {
