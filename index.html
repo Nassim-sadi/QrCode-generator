@@ -110,21 +110,12 @@
           </div>
         </nav>
       </header>
-      <main class="prose max-w-none w-full p-2 md:p-4">
+      <main class="prose w-full p-2 md:p-4 mx-auto">
         <img src="img/hero.png" class="rounded-xl" />
         <label class="block my-2" id="label" for="input"
           >Type in the text that you want to generate a QR code for :</label
         >
-        <input
-          type="text"
-          id="input"
-          size="36"
-          name="input"
-          aria-required="true"
-          required
-          value=""
-          class="block my-2"
-        />
+        <input type="text" id="input" name="input" aria-required="true" required value="" class="block my-2" />
         <select name="size" id="qrSize" class="block my-2">
           <option value="100">100x100</option>
           <option value="200">200x200</option>
@@ -148,7 +139,7 @@
         <div class="m-6">
           <div id="spin" class="dot-carousel hidden"></div>
         </div>
-        <div id="output" class=""></div>
+        <div id="output"></div>
         <div id="dwn"></div>
       </main>
     </div>
