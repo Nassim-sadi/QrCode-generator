@@ -25,6 +25,8 @@ genBtn.addEventListener('click', (e) => {
       setTimeout(() => {
         // Get save url
         const saveUrl = output.querySelector('img').src;
+        output.querySelector('canvas').attributes.width = 300;
+        output.querySelector('canvas').attributes.height = 300;
         // Create save button
         createSaveBtn(saveUrl);
       }, 50);
