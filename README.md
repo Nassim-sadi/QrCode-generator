@@ -1,6 +1,6 @@
 # QrCode Generator
 
-## _A simple QrCode Generator_
+## _A Simple QrCode Generator_
 
 [Demo](https://nassim-sadi.github.io/QrCode-generator/)
 
