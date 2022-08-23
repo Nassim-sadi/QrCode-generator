@@ -9,16 +9,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet" />
-    <script src="script/script.js" defer></script>
-    <script
+    <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
       integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    ></script>
+      ></script> -->
+    <script src="script/qrcode.js" defer></script>
+    <script src="script/script.js" defer></script>
   </head>
   <body>
-    <div class="container max-w-screen-lg antialiased mx-auto min-h-screen flex flex-col">
+    <div class="max-w-screen-lg antialiased mx-auto min-h-screen flex flex-col">
       <header>
         <nav class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg">
           <svg
@@ -110,7 +111,7 @@
           </div>
         </nav>
       </header>
-      <main class="prose w-full p-2 md:p-4 mx-auto">
+      <main class="prose lg:prose-xl max-w-none w-full p-2 md:p-4 mx-auto">
         <img src="img/hero.png" class="rounded-xl" />
         <label class="block my-2" id="label" for="input"
           >Type in the text that you want to generate a QR code for :</label
@@ -120,14 +121,19 @@
           <option value="100">100x100</option>
           <option value="200">200x200</option>
           <option value="300" selected>300x300</option>
-          <!--<option value="400">400x400</option>
-           <option value="500">500x500</option>
+          <option value="400">400x400</option>
+          <option value="500">500x500</option>
           <option value="600">600x600</option>
           <option value="700">700x700</option>
           <option value="800">800x800</option>
           <option value="900">900x900</option>
-          <option value="1000">1000x1000</option> -->
+          <option value="1000">1000x1000</option>
         </select>
+        <label>Pick colors for the Qrcode : </label>
+        <div class="my-2">
+          <input id="lightColor" name="light" type="color" value="#ffffff" />
+          <input id="darkColor" name="dark" type="color" value="#000000" />
+        </div>
         <button
           type="submit"
           id="genBtn"
@@ -139,7 +145,9 @@
         <div class="m-6">
           <div id="spin" class="dot-carousel hidden"></div>
         </div>
-        <div id="output" class="w-[300px]"></div>
+        <div id="output" class="overflow-scroll">
+          <canvas id="canvas"></canvas>
+        </div>
         <div id="dwn"></div>
       </main>
     </div>

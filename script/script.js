@@ -2,33 +2,38 @@ const genBtn = document.querySelector('#genBtn');
 const output = document.querySelector('#output');
 const spin = document.querySelector('#spin');
 const downloadBtn = document.querySelector('#downloadBtn');
-
 //function that generates Qr code on click
 
 genBtn.addEventListener('click', (e) => {
   e.preventDefault();
   clearUI();
+  genBtn.setAttribute('disabled', '');
+  setTimeout(() => {
+    genBtn.removeAttribute('disabled');
+  }, 1500);
   //Get everything we need
   const input = document.querySelector('#input').value;
   const size = document.querySelector('#qrSize').value;
   const label = document.querySelector('#label');
+  const canvas = document.querySelector('#canvas');
+  let lightColor = document.querySelector('#lightColor').value;
+  let darkColor = document.querySelector('#darkColor').value;
   //function start
   if (input === '') {
     return (label.innerHTML = 'this field is required');
   } else {
     showElem(spin);
     setTimeout(() => {
-      new QRCode(output, {
-        text: input,
-        width: size,
-        height: size,
+      QRCode.toCanvas(canvas, input, { width: size, color: { light: lightColor, dark: darkColor } }, function (error) {
+        if (error) console.error(error);
+        console.log('success!');
       });
       hideElem(spin);
       setTimeout(() => {
         // Get save url
-        const saveUrl = output.querySelector('img').src;
+        let dataURL = canvas.toDataURL('image/png');
         // Create save button
-        createSaveBtn(saveUrl);
+        createSaveBtn(dataURL);
       }, 50);
     }, 1000);
 
@@ -49,7 +54,7 @@ const createSaveBtn = (saveUrl) => {
 };
 //helper functions
 const clearUI = () => {
-  output.innerHTML = '';
+  //  output.innerHTML = '';
   const saveBtn = document.getElementById('save-link');
   if (saveBtn) {
     saveBtn.remove();
